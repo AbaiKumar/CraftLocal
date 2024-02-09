@@ -1,0 +1,25 @@
+{% extends "header_footer.html" %}
+
+{% block title %}
+<title>Craft Local - An online handmade product shopping site.</title>
+{% endblock title %}
+
+{% block content %}
+<section class="section-hero">
+    <h2>Welcome to Our Store!</h2>
+    <p>Discover the latest products and enjoy a seamless shopping experience.</p>
+</section>
+<main>
+    <aside>
+        <h2>Special Offers</h2>
+        <p>Get 10% off on your first purchase! Use code: FIRST10</p>
+        <ul type="square">
+            <li>Bangalore Art</li>
+            <li>Night Light</li>
+            <li>TV front cover</li>
+            <li>Paper boat</li>
+        </ul>
+    </aside>
+    <div class="cards" id="products"></div>
+</main>
+{% endblock content %}

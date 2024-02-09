@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* The animation code */
+@keyframes example {
+    0% {
+        background-position: 5%;
+    }
+
+    100% {
+        background-position: 10%;
+    }
+}
+
+body {
+    background-image: url("assets/undraw_add_to_cart_re_wrdo.svg");
+    background-size: 600px;
+    background-repeat: no-repeat;
+    display: grid;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+}
+
+::selection {
+    background: linear-gradient(to right, #a56dff, #a770ff);
+}
+
+.container {
+    background: #fff;
+    border: 0.5px solid rgb(218, 218, 218);
+    max-width: 400px;
+    width: 100%;
+    margin-left: 750px;
+    padding: 10px 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.container form .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+    position: relative;
+}
+
+.container form .title:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 33px;
+    left: 0px;
+    bottom: 3px;
+    background: linear-gradient(to right, #a56dff, #a770ff);
+    border-radius: 5px;
+}
+
+.container form .input-box {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.container form .input-box input,
+.container form .input-box select {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 18px;
+    border: none;
+}
+
+.container form .underline::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    left: 0;
+    bottom: 0;
+}
+
+.container form .underline::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, #a56dff, #a770ff);
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease;
+}
+
+.container form .input-box input:focus~.underline::after,
+.container form .input-box input:valid~.underline::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.container form .input-box select:focus~.underline::after,
+.container form .input-box select:valid~.underline::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.container form .button {
+    margin: 40px 0 20px 0;
+}
+
+
+.container .input-box input[type="submit"] {
+    background: linear-gradient(to right, #a56dff, #a770ff);
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .input-box input[type="submit"]:hover {
+    background-color: linear-gradient(to right, #a56dff, #a770ff);
+}
+
+.container .option {
+    font-size: 14px;
+    text-align: center;
+}
+
+.container .option div {
+    display: flex;
+    align-items: center;
+}
+
+.container .google a {
+    display: block;
+    height: 50px;
+    width: 100%;
+    font-size: 15px;
+    text-decoration: none;
+    padding-left: 20px;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.container .google i {
+    padding-right: 12px;
+    font-size: 20px;
+}
+
+.container .google a {
+    background: linear-gradient(to right, #00acee 0%, #1abeff 100%);
+    margin: 20px 0 15px 0;
+}
+
+.container .google a:hover {
+    background: linear-gradient(to left, #00acee 0%, #1abeff 100%);
+    margin: 20px 0 15px 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For desktop and mobiles*/
+    .container {
+        margin-left: 0px;
+    }
+
+    body {
+        background-position: center;
+        background-size: cover;
+        animation-name: none;
+    }
+}
+
+.radioContainer {
+    margin-top: 30px;
+}
+
+.radioContainer .form-check {
+    margin: 10px 0px 0px 10%;
+}
+
+.form-check-input:checked {
+    background-color: linear-gradient(to right, #a56dff, #a770ff);
+    border-color: linear-gradient(to right, #a56dff, #a770ff);
+}

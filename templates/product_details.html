@@ -1,0 +1,72 @@
+{% extends "header_footer.html" %}
+
+{% block title %}
+<title>Craft Local - An online handmade product shopping site.</title>
+{% endblock title %}
+
+{% block content %}
+<section class="section-hero">
+    <h2>Welcome to Our Store!</h2>
+    <p>Discover the latest products and enjoy a seamless shopping experience.</p>
+</section>
+<main>
+    <aside>
+        <h2>Special Offers</h2>
+        <p>Get 10% off on your first purchase! Use code: FIRST10</p>
+        <ul type="square">
+            <li>Bangalore Art</li>
+            <li>Night Light</li>
+            <li>TV front cover</li>
+            <li>Paper boat</li>
+        </ul>
+    </aside>
+
+    <section class="product-details">
+        <section class="product-image">
+            <img src="./assets/balbala_table_lamp.jpg" alt="Product Image">
+        </section>
+
+        <section id="product-info"></section>
+        <form action="add_to_cart.php" method="post">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" required><br>
+            <button type="submit">Add to Cart</button>
+        </form>
+    </section>
+</main>
+<div class="utube">
+    <h2>Manufacturing Video</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/l1JZvnGkmdk?si=tebWMeI0f6MGTFoz"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+</div>
+<script>
+    function dataLoader(pid) {
+        fetch('/get_data?pid=' + pid)
+            .then(response => {
+                var item = response["data"];
+                console.log("hi");
+                var offer = item.Price - parseInt((item.Price * item.Discount) / 100);
+                document.getElementById('product-info').innerHTML += `
+                    <div class="card">
+                        <a href="./singlePage?pid=`+ item._id + `" title="` + item.Name + `">
+                            <div class="zoomC" style="background: url('uploads/`+ item.Name + `.jpg');"></div>
+                        </a>
+                        <div class="details">
+                            <h5>${item.Name}</h5>
+                            <p>
+                                ${(item.Discount === 0) ? `<em>₹${item.Price}</em>` : `<strike>₹${item.Price}</strike>&nbsp;&nbsp;<em><b>₹${offer}</b></em>`}
+                            </p>
+                            <button>Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+            });
+    }
+
+    window.onload = function caller() {
+        dataLoader("{{ pid }}");
+    };
+</script>
+{% endblock content %}

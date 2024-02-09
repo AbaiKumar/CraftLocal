@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This site sell all handmade products and design to consumers.">
+    <meta name="keywords" content="Local Craft, Handmade products, Design, Art-and-craft">
+    <title>Craft Local - An online handmade product shopping site.</title>
+    <link rel="shortcut icon" href="./assets/logo_sm.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-details {
+            margin-top: 20px;
+            padding: 25px;
+            display: flex;
+        }
+        img {
+            border-radius: 20px;
+            height: 400px;
+            width: 275px;
+        }
+    </style>
+    <script>
+        function changeIframeSrc(page) {
+            document.getElementById('main-content').src = page;
+        }
+    </script>
+</head>
+<body>
+    <section class="section-hero">
+        <h2>Welcome to Our Store!</h2>
+        <p>Discover the latest products and enjoy a seamless shopping experience.</p>
+    </section>
+    <main>
+        <aside>
+            <h2>Special Offers</h2>
+            <p>Get 10% off on your first purchase! Use code: FIRST10</p>
+            <ul type="square">
+                <li>Bangalore Art</li>
+                <li>Night Light</li>
+                <li>TV front cover</li>
+                <li>Paper boat</li>
+            </ul>
+        </aside>
+        <section class="product-details">
+            <section class="product-image">
+                <a href="./assets/balbala_table_lamp.jpg"><img src="./assets/balbala_table_lamp.jpg"
+                        alt="Product Image"></a>
+            </section>
+
+            <section class="product-info">
+                <h2>Balbala Table Lamp</h2>
+                <p><em>₹29.99</em></p>
+                <p>High Quality designed furniture made by philipes company.</p>
+
+                <form action="#" method="post">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" required><br>
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </section>
+        </section>
+    </main>
+    <div class="utube">
+        <h2>Manufacturing Video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/l1JZvnGkmdk?si=tebWMeI0f6MGTFoz"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
+</body>
+</html>

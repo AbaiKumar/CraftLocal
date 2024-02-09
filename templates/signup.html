@@ -1,0 +1,35 @@
+{% extends "authentication.html" %}
+
+{% block title %}
+<title>Signup</title>
+{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <form action="/" method="POST">
+        <div class="title">Signup</div>
+        <div class="input-box underline">
+            <input type="text" placeholder="Enter Your Email" name="mail" required />
+            <div class="underline"></div>
+            {% if msg %}
+            <p>{{ msg }}</p>
+            {% endif %}
+        </div>
+        <div class="input-box underline"> {# Added missing class "underline" #}
+            <input type="password" placeholder="Enter Password" name="password" required />
+            <div class="underline"></div>
+        </div>
+        <div class="input-box underline"> {# Added missing class "underline" #}
+            <input type="password" placeholder="Confirm Password" name="confirm_password" required /> {# Added missing
+            name attribute #}
+            <div class="underline"></div>
+        </div>
+        <div class="input-box button">
+            <input type="submit" value="Continue" />
+        </div>
+        <p style="text-align: center; font-size: 14px;">Already have an account? <a href="{{ url_for('login') }}"
+                style="text-decoration-line: none;"><b>Login</b></a></p>
+    </form><br>
+</div>
+{% endblock content %}

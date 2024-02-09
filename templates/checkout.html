@@ -1,0 +1,139 @@
+{% extends "header_footer.html" %}
+
+{% block title %}
+<title>Craft Local - An online handmade product shopping site.</title>
+{% endblock title %}
+
+{% block content %}
+<style>
+    section {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #b78aff;
+        color: #fff;
+    }
+
+    .total-row {
+        font-weight: bold;
+    }
+
+    .checkout-btn {
+        background-color: #b78aff;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</header>
+<h1>Checkout Your Products</h1>
+<script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+<main>
+    <section>
+        <table id="table-checkout"></table>
+        <center>
+            <button class="checkout-btn" onclick="checkOutProduct()">Proceed to Checkout</button>
+        </center>
+    </section>
+    <script>
+        var globalCheckoutData = [];
+        var checkout = document.getElementById("table-checkout");
+        checkout.innerHTML = "";
+        var options = {
+            margin: 10,
+            filename: 'checkout_bill.pdf',
+            html2canvas: { scale: 10 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        function getCartData() {
+            console.log("i");
+            fetch("/getCheckoutList")
+                .then(response => response.json())  // Assuming the response is in JSON format
+                .then(data => {
+                    console.log(data["data"]);
+                    globalCheckoutData = data["data"];
+                    loadCartData();
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        function loadCartData() {
+            var total = 0;
+            if (globalCheckoutData.length != 0) {
+                checkout.innerHTML = `<thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>`;
+
+                for (var index in globalCheckoutData) {
+                    var offer = globalCheckoutData[index]["Price"] - parseInt((globalCheckoutData[index]["Price"] * globalCheckoutData[index]["Discount"]) / 100);
+                    checkout.innerHTML += `<tr>
+                                            <td>`+ globalCheckoutData[index]["Name"] + `</td>
+                                            <td><input type="number" onchange="changeQuantity(event, `+ index + `)" value="` + globalCheckoutData[index]["Quantity"] + `"></td>
+                                            <td>$`+ offer + `</td>
+                                            <td>$`+ offer * globalCheckoutData[index]["Quantity"] + `</td>
+                                        </tr>`;
+                    total += (offer * globalCheckoutData[index]["Quantity"]);
+                }
+                checkout.innerHTML += `<tr class="total-row">
+                                        <td colspan="3">Total</td>
+                                        <td>$`+ total + `</td>
+                                    </tr>
+                                    </tbody>`;
+            } else {
+                alert("failed!!!");
+            }
+        }
+        function changeQuantity(event, index) {
+            globalCheckoutData[index]["Quantity"] = event.target.value;
+            loadCartData();
+        }
+        function checkOutProduct() {
+            fetch('/setCheckoutData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({"data":globalCheckoutData})
+            })
+                .then(response => response.json())
+                .then(response => {
+                    if (response["status"] == "success") {
+                        html2pdf(checkout, options);
+                        alert("Checkout Success...");
+                    } else {
+                        alert("Checkout failed...");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        getCartData();
+    </script>
+</main>
+{% endblock content %}
