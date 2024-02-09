@@ -1,0 +1,191 @@
+[{
+  "_id": {
+    "$oid": "659d12224df34bb9a75e2a34"
+  },
+  "Name": "Handcrafted Leather Cross Body Bag With Hand Stitch Detail",
+  "Description": "A Jawaja Leather Craft Product. A smart, elegant accessory, this beautifully crafted cross body bag is a unique style statement. The bag comes with an outer pocket and two zippers. Jawaja Leather Craft traditionally practiced by the Regar community of Rajasthan, dates back to over three centuries ago. From the processing of the raw hide to the finishing of the final leather product, the entire process is entirely handcrafted and undertaken using bare tools that have been used right through the centuries. Jawaja leather craft products are stitched using two layers of pure leather placed together, in which holes are created using awls. These holes are then stitched together using long needles, that ensure the strength and long durability of the product, helping it stand the test of time, besides imparting a smart, rustic appeal.",
+  "Price": 2400,
+  "Discount": 0,
+  "Quantity": 5,
+  "Category": "Craft",
+  "Inner_Category": "Bag",
+  "Material": "Genuine Leather",
+  "Color": "Brown",
+  "Dimensions": {
+    "Length": 10,
+    "Width": 3,
+    "Height": 8
+  },
+  "Weight": 0.5,
+  "Brand": "Jawaja Leather Craft",
+  "Handcrafted": true,
+  "Care_Instructions": "Avoid exposure to direct sunlight and water. Clean with a dry cloth.",
+  "Shipping_Details": {
+    "Shipping_Method": "Standard",
+    "Shipping_Time": "3-5 business days",
+    "Shipping_Cost": 100
+  }
+},
+{
+  "_id": {
+    "$oid": "659d12414df34bb9a75e2a36"
+  },
+  "Name": "Handwoven Cotton Wall Hanging",
+  "Description": "An intricately handwoven wall hanging made from locally sourced cotton threads. Adds a touch of warmth and cultural charm to any living space.",
+  "Price": 800,
+  "Discount": 10,
+  "Quantity": 15,
+  "Category": "Craft",
+  "Inner_Category": "Home Decor",
+  "Material": "Cotton",
+  "Color": "Multi-color",
+  "Dimensions": {
+    "Length": 18,
+    "Width": 2,
+    "Height": 24
+  },
+  "Weight": 0.2,
+  "Brand": "Local Artisans Collective",
+  "Handcrafted": true,
+  "Care_Instructions": "Handle with care. Avoid exposure to direct sunlight.",
+  "Shipping_Details": {
+    "Shipping_Method": "Local Pickup",
+    "Shipping_Time": "1-3 business days",
+    "Shipping_Cost": 30
+  }
+},
+{
+  "_id": {
+    "$oid": "659d125d4df34bb9a75e2a38"
+  },
+  "Name": "Hand-painted Ceramic Coasters Set",
+  "Description": "A set of four hand-painted ceramic coasters featuring vibrant local patterns. Protect your surfaces in style while supporting local artisans.",
+  "Price": 350,
+  "Discount": 5,
+  "Quantity": 25,
+  "Category": "Craft",
+  "Inner_Category": "Home Decor",
+  "Material": "Ceramic",
+  "Color": "Assorted",
+  "Dimensions": {
+    "Length": 4,
+    "Width": 4,
+    "Height": 0.2
+  },
+  "Weight": 0.1,
+  "Brand": "Local Ceramic Studio",
+  "Handcrafted": true,
+  "Care_Instructions": "Wipe clean with a damp cloth.",
+  "Shipping_Details": {
+    "Shipping_Method": "Local Courier",
+    "Shipping_Time": "2-5 business days",
+    "Shipping_Cost": 20
+  }
+},
+{
+  "_id": {
+    "$oid": "659d12704df34bb9a75e2a3a"
+  },
+  "Name": "Bamboo Handled Hand Fan",
+  "Description": "Stay cool in style with this handcrafted hand fan featuring a bamboo handle and traditional local designs. Perfect for hot summer days.",
+  "Price": 200,
+  "Discount": 0,
+  "Quantity": 30,
+  "Category": "Craft",
+  "Inner_Category": "Accessories",
+  "Material": "Bamboo, Fabric",
+  "Color": "Natural",
+  "Dimensions": {
+    "Length": 9,
+    "Width": 1,
+    "Height": 18
+  },
+  "Weight": 0.15,
+  "Brand": "Local Craftsmen Co.",
+  "Handcrafted": true,
+  "Care_Instructions": "Handle with care. Keep away from direct heat.",
+  "Shipping_Details": {
+    "Shipping_Method": "Local Delivery",
+    "Shipping_Time": "1-4 business days",
+    "Shipping_Cost": 25
+  }
+},
+{
+  "_id": {
+    "$oid": "659d127a4df34bb9a75e2a3c"
+  },
+  "Name": "Recycled Newspaper Coiled Basket",
+  "Description": "A sustainable and eco-friendly coiled basket made from recycled newspapers. Adds a touch of creativity and environmental consciousness to your home.",
+  "Price": 450,
+  "Discount": 15,
+  "Quantity": 12,
+  "Category": "Craft",
+  "Inner_Category": "Home Decor",
+  "Material": "Recycled Newspaper",
+  "Color": "Natural",
+  "Dimensions": {
+    "Height": 4
+  },
+  "Weight": 0.2,
+  "Brand": "GreenCraft Initiative",
+  "Handcrafted": true,
+  "Care_Instructions": "Keep dry. Clean with a soft brush if needed.",
+  "Shipping_Details": {
+    "Shipping_Method": "Local Pickup",
+    "Shipping_Time": "2-4 business days",
+    "Shipping_Cost": 15
+  }
+},
+{
+  "_id": {
+    "$oid": "659d12894df34bb9a75e2a3e"
+  },
+  "Name": "Hand-Embroidered Linen Table Runner",
+  "Description": "Elevate your dining experience with this hand-embroidered linen table runner featuring exquisite local embroidery. A perfect blend of tradition and modern aesthetics.",
+  "Price": 1200,
+  "Discount": 10,
+  "Quantity": 18,
+  "Category": "Craft",
+  "Inner_Category": "Home Decor",
+  "Material": "Linen",
+  "Color": "White",
+  "Dimensions": {
+    "Length": 72,
+    "Width": 12
+  },
+  "Weight": 0.3,
+  "Brand": "Local Embroidery Artisans",
+  "Handcrafted": true,
+  "Care_Instructions": "Hand wash in cold water. Air dry.",
+  "Shipping_Details": {
+    "Shipping_Method": "Local Courier",
+    "Shipping_Time": "3-6 business days",
+    "Shipping_Cost": 35
+  }
+},
+{
+  "_id": {
+    "$oid": "659d12c94df34bb9a75e2a40"
+  },
+  "Name": "Hand-carved Wooden Coasters Set",
+  "Description": "A set of four hand-carved wooden coasters showcasing intricate local woodcraft. Protect your surfaces with these functional pieces of art.",
+  "Price": 550,
+  "Discount": 5,
+  "Quantity": 22,
+  "Category": "Craft",
+  "Inner_Category": "Home Decor",
+  "Material": "Wood",
+  "Color": "Brown",
+  "Dimensions": {
+    "Height": 0.5
+  },
+  "Weight": 0.2,
+  "Brand": "Local Woodcraft Studio",
+  "Handcrafted": true,
+  "Care_Instructions": "Wipe clean with a dry cloth.",
+  "Shipping_Details": {
+    "Shipping_Method": "Local Delivery",
+    "Shipping_Time": "2-5 business days",
+    "Shipping_Cost": 18
+  }
+}]

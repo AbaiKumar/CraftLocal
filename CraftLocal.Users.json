@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "65aa538528d96e2e446e3706"
+  },
+  "mail": "abai.ac.in",
+  "password": "123",
+  "placed": {},
+  "checkout": {
+    "659d12414df34bb9a75e2a36": 3,
+    "659d12894df34bb9a75e2a3e": 3,
+    "659d12224df34bb9a75e2a34": 1,
+    "659d12c94df34bb9a75e2a40": 5
+  }
+}]
