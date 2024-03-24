@@ -1,3 +1,4 @@
+import re
 from model import *
 from flask import Flask, jsonify, request, render_template, session, redirect, url_for, send_from_directory
 from flask_cors import CORS
@@ -30,8 +31,15 @@ def signup():
     elif request.method == "GET":
         return render_template("signup.html", msg=None, mail="", pwd="")
     else:
+        mail = request.form["mail"]
+        pwd = request.form["password"]
+    
+        if not re.search(r"@gmail\.com$", mail) or len(str(pwd)) < 4:
+            return render_template("signup.html", msg="Invalid gmail/password", mail=request.form["mail"], pwd=request.form["password"])
+        
         if data.createAccount(request.form["mail"], request.form["password"]):
             return redirect(url_for('login'))
+        
         else:
             return render_template("signup.html", msg="Account already exists", mail=request.form["mail"], pwd=request.form["password"])
 
